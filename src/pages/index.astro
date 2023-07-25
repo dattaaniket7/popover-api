@@ -1,13 +1,13 @@
 ---
+import picture from "/picture.jpg";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>popover API</title>
   </head>
   <body>
     <button
@@ -15,5 +15,32 @@
       class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-blue-600 py-2 px-6 rounded-md text-white shadow-lg shadow-blue-400"
       >Toggle the popover</button
     >
+
+    <div class="rounded-md text-center p-0" id="popover" popover>
+      <img src={picture} />
+      <div class="p-12">
+        <h1 class="text-2xl font-black">Let's learn more about the web.</h1>
+        <p class="pt-4">
+          Join the waitlist to find out when the podcast launches.
+        </p>
+        <div class="flex mt-6">
+          <input
+            type="text"
+            placeholder="Your Email"
+            class="border-gray-200 w-full rounded-sm border-2 p-2 text-sm border-1"
+          />
+          <button
+            class="bg-blue-600 w-36 shadow-lg shadow-blue-400 text-sm p-2 px-6 text-white rounded-sm"
+            >Join now</button
+          >
+        </div>
+      </div>
+    </div>
   </body>
+
+  <style>
+    #popover::backdrop {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
 </html>
