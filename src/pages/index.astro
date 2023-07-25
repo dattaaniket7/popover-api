@@ -19,9 +19,9 @@ import picture from "/picture.jpg";
     <div class="rounded-md text-center p-0" id="popover" popover>
       <img src={picture} />
       <div class="p-12">
-        <h1 class="text-2xl font-black">Let's learn more about the web.</h1>
+        <h1 class="text-2xl font-black">Let's learn to play football.</h1>
         <p class="pt-4">
-          Join the waitlist to find out when the podcast launches.
+          Join the waitlist to find out when the football camp starts.
         </p>
         <div class="flex mt-6">
           <input
@@ -41,6 +41,26 @@ import picture from "/picture.jpg";
   <style>
     #popover::backdrop {
       background: rgba(0, 0, 0, 0.6);
+    }
+    #popover {
+      &:popover-open {
+        opacity: 1;
+        animation: slide 500ms ease-out;
+      }
+      opacity: 0;
+      trabsition: transform 0.5s, display 0.5s,
+        opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    @keyframes slide {
+      from {
+        opacity: 0;
+        transform: translateY(2rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0rem);
+      }
     }
   </style>
 </html>
